@@ -1,18 +1,16 @@
 import React from 'react'
 import Header from '../components/Header/Header'
-import Hero from '../components/Hero/Hero'
-import Cards from '../components/Cards/Cards'
 import Footer from '../components/Footer/Footer'
+import Cart from '../components/Cart/Cart'
 
-const HomePages = () => {
+const CartPage = () => {
   return (
     <>
     <Header/>
-    <Hero/>
-    <Cards/>
+    <Cart/>
     <Footer/>
     </>
   )
 }
 
-export default HomePages
+export default CartPage

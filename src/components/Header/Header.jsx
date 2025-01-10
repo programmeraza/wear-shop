@@ -1,41 +1,43 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Header.scss";
 import { Link } from 'react-router-dom';
-import { RiShoppingCart2Line, RiShoppingCartFill } from "react-icons/ri";
-import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { RiShoppingCartLine, RiShoppingCartFill } from "react-icons/ri";
 import { FaRegUser, FaUserAlt } from "react-icons/fa";
+import FavoriteButton from '../FavoriteButton/FavoriteButton';
 
 const Header = () => {
-    
   const [isCartActive, setIsCartActive] = useState(false);
-  const [isHeartActive, setIsHeartActive] = useState(false);
   const [isUserActive, setIsUserActive] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartCount(savedCart.length);
+  }, []);
 
   return (
     <div className="header">
       <div className="container">
         <div className="header__wrapper">
-          <div className="header__logo-flex">
+          <Link to={'/'} className="header__logo-flex">
             <img src="/logo.png" alt="logo" />
             <div className="header__logo-content">
               <h1>Red Clothes</h1>
               <p>Магазин одежды для практики</p>
             </div>
-          </div>
+          </Link>
           <ul className="header__nav">
             <Link
+              to={'/cart'}
               className="header__link"
               onClick={() => setIsCartActive(!isCartActive)}
             >
-              {isCartActive ? <RiShoppingCartFill /> : <RiShoppingCart2Line />}
+              {isCartActive ? <RiShoppingCartFill /> : <RiShoppingCartLine />}
+              {cartCount > 0 && <span className="header__cart-count">{cartCount}</span>}
             </Link>
+            <FavoriteButton />
             <Link
-              className="header__link"
-              onClick={() => setIsHeartActive(!isHeartActive)}
-            >
-              {isHeartActive ? <FaHeart /> : <FaRegHeart />}
-            </Link>
-            <Link
+              to={'/login'}
               className="header__link"
               onClick={() => setIsUserActive(!isUserActive)}
             >

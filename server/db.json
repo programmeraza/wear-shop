@@ -1,0 +1,52 @@
+{
+    "products": [
+        {
+            "id" : 1,
+            "name" : "Blacksi",
+            "text" : "Костюм спортивный",
+            "price" : "3 595 ₽",
+            "inStock" : true,
+            "image" : "/card1.png"
+        },
+        {
+            "id" : 2,
+            "name" : "Fashion.Love.Story",
+            "text" : "Платье",
+            "price" : "3 500 ₽",
+            "inStock" : true,
+            "image" : "/card2.png"
+        },
+        {
+            "id" : 3,
+            "name" : "UNIQLO",
+            "text" : "Водолазка",
+            "price" : "2 999 ₽",
+            "inStock" : false,
+            "image" : "/card3.png"
+        },
+        {
+            "id" : 4,
+            "name" : "Mark Formelle",
+            "text" : "Костюм домашний",
+            "price" : "1 699 ₽",
+            "inStock" : true,
+            "image" : "/card4.png"
+        },
+        {
+            "id" : 5,
+            "name" : "Vittoria Vicci",
+            "text" : "Пуловер",
+            "price" : "3 595 ₽",
+            "inStock" : true,
+            "image" : "/card5.png"
+        },
+        {
+            "id" : 5,
+            "name" : "O'stin",
+            "text" : "Платье",
+            "price" : "3 799 ₽",
+            "inStock" : true,
+            "image" : "/card6.png"
+        }
+    ]
+}
